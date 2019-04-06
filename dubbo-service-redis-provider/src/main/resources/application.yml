@@ -1,0 +1,69 @@
+
+
+server:
+  port: 8084
+
+# Services Versions
+services:
+  versions:
+    user:
+      v1: 1.0.0
+
+# Dubbo Config properties
+dubbo:
+  ## Base packages to scan Dubbo Component：@com.alibaba.dubbo.config.annotation.Service
+  scan:
+    basePackages: com.gentle.service.api.impl
+  ## ApplicationConfig Bean
+  application:
+    id: dubbo-service-redis-provider
+    name: dubbo-service-redis-provider
+    qos-port: 22224
+    qos-enable: true
+  ## ProtocolConfig Bean
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 20883
+    status: server
+    serialization: kryo
+  ## RegistryConfig Bean
+  registry:
+    id: zookeeper
+    address: zookeeper://192.168.79.128:2181?backup=192.168.79.128:2182,192.168.79.128:2183
+
+# Enables Dubbo All Endpoints
+management:
+  endpoint:
+    dubbo:
+      enabled: true
+    dubbo-shutdown:
+      enabled: true
+    dubbo-configs:
+      enabled: true
+    dubbo-services:
+      enabled: true
+    dubbo-references:
+      enabled: true
+    dubbo-properties:
+      enabled: true
+  # Dubbo Health
+  health:
+    dubbo:
+      status:
+        ## StatusChecker Name defaults (default : "memory", "load" )
+        defaults: memory
+        ## StatusChecker Name extras (default : empty )
+        extras: load,threadpool
+spring:
+  redis:
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+
+    host: localhost
+    port: 6379
+    password:

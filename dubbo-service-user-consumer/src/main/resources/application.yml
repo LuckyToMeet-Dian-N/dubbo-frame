@@ -1,0 +1,60 @@
+# Spring boot application
+server:
+  port: 8081
+
+# Services Versions
+services:
+  versions:
+    user:
+      v1: 1.0.0
+
+# Dubbo Config properties
+dubbo:
+  scan:
+    basePackages: com.gentle.controller
+  ## ApplicationConfig Bean
+  application:
+    id: dubbo-service-user-consumer
+    name: dubbo-service-user-consumer
+  ## ProtocolConfig Bean
+  protocol:
+    id: dubbo
+    name: dubbo
+#    serialization: kryo
+  ## RegistryConfig Bean
+  registry:
+    id: zookeeper
+    address: zookeeper://192.168.79.128:2181?backup=192.168.79.128:2182, 192.168.79.128:2183
+
+# Dubbo Endpoint (default status is disable)
+endpoints:
+  dubbo:
+    enabled: true
+
+management:
+  server:
+    port: 8701
+  # Dubbo Health
+  health:
+    dubbo:
+      status:
+        ## StatusChecker Name defaults (default : "memory", "load" )
+        defaults: memory
+  # Enables Dubbo All Endpoints
+  endpoint:
+    dubbo:
+      enabled: true
+    dubbo-shutdown:
+      enabled: true
+    dubbo-configs:
+      enabled: true
+    dubbo-services:
+      enabled: true
+    dubbo-references:
+      enabled: true
+    dubbo-properties:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
