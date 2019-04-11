@@ -18,20 +18,23 @@ import javax.xml.transform.Result;
 /**
  * @author Gentle
  * @date 2019/04/11 : 12:52
+ * 权限拦截，可修改拦截的类或方法
+ * 如要使用时，开启注释
  */
-@Aspect
-@Component
-@Slf4j
+//@Aspect
+//@Component
+//@Slf4j
 public class AuthenticationAop {
 
     @Reference
     private RedisService redisService;
-    @Pointcut("execution(public  * com.gentle.controller.*.*(..))")
+
+//    @Pointcut("execution(public  * com.gentle.controller.*.*(..))")
     public void authority(){
     }
 
-    @Before("authority()")
-    public void authenticationMethod(ProceedingJoinPoint proceedingJoinPoint){
+//    @Before("authority()")
+    public void authenticationMethod(){
 
         HttpServletRequest request = RequestAndResponseUtils.getRequest();
 
@@ -45,6 +48,11 @@ public class AuthenticationAop {
         }
     }
 
+    /**
+     * 返回错误信息格式
+     * @param errorInfo 错误信息
+     * @return
+     */
     private ResultBean responseErrorInfo(String errorInfo){
         ResultBean resultBean = new ResultBean();
         resultBean.setMsg(errorInfo);

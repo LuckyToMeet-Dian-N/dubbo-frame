@@ -3,6 +3,7 @@ package com.gentle.api.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.gentle.exception.CheckException;
 import com.gentle.UserService;
+import com.gentle.result.dto.ResultBeanDTO;
 
 /**
  * @author Gentle
@@ -10,10 +11,19 @@ import com.gentle.UserService;
  */
 @Service
 public class UserServiceImpl implements UserService {
-    @Override
-    public String hello() {
-//        return "hello dubbo";
-    throw new CheckException("123123");
 
+
+    @Override
+    public ResultBeanDTO<String> hellos() {
+
+        ResultBeanDTO<String> hi = Hi();
+        String data = hi.getData();
+
+        return new ResultBeanDTO<>( data+",我来了");
+    }
+
+    @Override
+    public ResultBeanDTO<String> Hi() {
+        return new ResultBeanDTO<>("你好啊，Dubbo");
     }
 }

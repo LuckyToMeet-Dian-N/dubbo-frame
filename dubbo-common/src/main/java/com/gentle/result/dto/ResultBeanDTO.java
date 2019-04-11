@@ -1,4 +1,4 @@
-package com.gentle.dto;
+package com.gentle.result.dto;
 
 import java.io.Serializable;
 
@@ -47,7 +47,7 @@ public class ResultBeanDTO<T> implements Serializable {
         this.data = data;
     }
 
-    public ResultBeanDTO(String msg,T data){
+    public ResultBeanDTO(String msg, T data){
         super();
         this.data = data;
         this.msg = msg;
