@@ -13,7 +13,10 @@ import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-
+/**
+ * @author Gentle
+ * @date 2019/04/11 : 16:23
+ */
 public class TokenManager {
 
 	public static SecretKey generalKey() {

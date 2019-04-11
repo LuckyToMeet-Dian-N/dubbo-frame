@@ -16,14 +16,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResultBeanDTO<String> hellos() {
 
-        ResultBeanDTO<String> hi = Hi();
+        ResultBeanDTO<String> hi = hi();
         String data = hi.getData();
 
         return new ResultBeanDTO<>( data+",我来了");
     }
 
     @Override
-    public ResultBeanDTO<String> Hi() {
+    public ResultBeanDTO<String> hi() {
         return new ResultBeanDTO<>("你好啊，Dubbo");
     }
 }

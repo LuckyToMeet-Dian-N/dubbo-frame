@@ -1,16 +1,14 @@
 package com.gentle.jjwt;
 
 /**
- * @Auther: Gentle
- * @Date: 2019/3/31 20:52
- * @Description:
+ * @author : Gentle
+ * @date : 2019/04/11 : 16:23
  */
-
 public interface JwtConstants {
     /** jwtid  **/
     String JWT_ID = "5236A";
     /**
-     *
+     * id
      */
     String ID="jwt";
     /**

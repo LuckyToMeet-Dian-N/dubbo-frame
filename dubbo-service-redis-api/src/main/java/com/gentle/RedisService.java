@@ -8,7 +8,12 @@ import java.util.concurrent.TimeUnit;
  * @date 2019/04/06 : 12/48
  */
 public interface RedisService {
-
+    /**
+     *  redis 字符串插入
+     * @param key  redis 键
+     * @param value redis 值
+     * @return 返回是否成功
+     */
      boolean set(String key, String value);
 
     /**
@@ -16,6 +21,7 @@ public interface RedisService {
      *
      * @param key redis key
      * @param value redis 值
+     * @param second 时间
      * @return
      */
      boolean set(String key, String  value, int second);
@@ -54,7 +60,12 @@ public interface RedisService {
      */
      void hashSet(String key, String field, String value, long time);
 
-
+    /**
+     * 哈希存储，拿出存的值
+     * @param key 键
+     * @param field 字段
+     * @return 存储的字符串数据
+     */
      String hashGet(String key, String field);
 
     /**
@@ -92,7 +103,7 @@ public interface RedisService {
 
     /**
      * 自减，自定义加多少
-     *
+     * @return 返回 1
      * @param key 键
      */
      long decr(String key);
@@ -100,8 +111,8 @@ public interface RedisService {
     /**
      * 自减，自定义减少数量
      *
-     * @param key
-     * @param delta
+     * @param key redis 键
+     * @param delta 减少多少
      * @return
      */
     Long decr(String key, long delta);

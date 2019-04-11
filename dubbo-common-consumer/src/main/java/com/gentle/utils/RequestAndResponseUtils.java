@@ -9,22 +9,20 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import java.net.InetAddress;
 
 /**
- * 请求的工具类工具类
- * @author wen
- *
+ * 请求的工具类
+ * @author Gentle
+ * @date 2019/04/11 : 16:21
  */
-
 public class RequestAndResponseUtils {
-	public static String D = ",";
-	public static int IP_LENGTH = 15;
-	public static  String UNKNOWN = "unknown";
-	public static String LOCALHOST = "127.0.0.1";
+	private static String D = ",";
+	private static int IP_LENGTH = 15;
+	private static  String UNKNOWN = "unknown";
+	private static String LOCALHOST = "127.0.0.1";
 
 	/**
 	 * 获取request对象
-	 * @return
+	 * @return 返回request对象
 	 */
-
 	public static HttpServletRequest getRequest() {
 		// HttpServlerRequest
 		return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -32,32 +30,18 @@ public class RequestAndResponseUtils {
 	}
 	/**
 	 * 获取responnse对象
-	 * @return
+	 * @return 返回 responnse 对象
 	 */
-	
 	public  static HttpServletResponse getResponse() {
 		// HttpServlerRequest
 		return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
 
 	}
 
-	public static HttpSession getSession(){
-		return ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest().getSession();
-	}
-
-	public static Object getSessionObject(){
-		HttpSession session = getSession();
-		HttpServletRequest request = getRequest();
-		String uuId = request.getHeader("token");
-		return session.getAttribute(uuId);
-	}
-
 	/**
-	 * 获取客户端IP
-	 * @author CCJ
-	 * @date 2018/11/10 17:05
-	 * @return java.lang.String
-	 **/
+	 * 获取 ip
+	 * @return ip 地址
+	 */
 	public static String getRequestIpAddr(){
 		HttpServletRequest httpServletRequest = getRequest();
 		String ip = httpServletRequest.getHeader("x-forwarded-for");

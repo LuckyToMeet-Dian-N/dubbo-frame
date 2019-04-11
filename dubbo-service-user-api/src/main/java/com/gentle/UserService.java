@@ -10,6 +10,6 @@ public interface UserService {
 
     ResultBeanDTO<String > hellos();
 
-    ResultBeanDTO<String> Hi();
+    ResultBeanDTO<String> hi();
 
 }
