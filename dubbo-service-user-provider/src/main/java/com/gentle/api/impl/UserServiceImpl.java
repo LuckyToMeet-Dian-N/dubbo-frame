@@ -1,8 +1,8 @@
-package com.gentle.service.api.impl;
+package com.gentle.api.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.gentle.exception.CheckException;
-import com.gentle.service.UserService;
+import com.gentle.UserService;
 
 /**
  * @author Gentle

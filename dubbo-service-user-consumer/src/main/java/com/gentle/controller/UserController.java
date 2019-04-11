@@ -2,7 +2,7 @@ package com.gentle.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.gentle.result.ResultBean;
-import com.gentle.service.UserService;
+import com.gentle.UserService;
 import com.gentle.vo.UsersVo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +19,7 @@ public class UserController {
 
     @GetMapping(value = "hello")
     public ResultBean<UsersVo> returns(){
-
+        System.out.println(userService);
         String hello = userService.hello();
         UsersVo usersVo = new UsersVo();
         usersVo.setUserName("123");

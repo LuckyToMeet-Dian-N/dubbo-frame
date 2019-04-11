@@ -49,7 +49,6 @@
             <artifactId>dubbo-common</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-
         <dependency>
             <groupId>com.gentle</groupId>
             <artifactId>dubbo-common-bean</artifactId>
@@ -65,6 +64,16 @@
             <artifactId>mysql-connector-java</artifactId>
 
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.projectlombok</groupId>-->
+            <!--<artifactId>lombok</artifactId>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
 
 
     </dependencies>

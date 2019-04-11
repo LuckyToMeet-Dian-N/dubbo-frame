@@ -56,6 +56,17 @@
             <artifactId>lombok</artifactId>
             <scope>compile</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gentle</groupId>
+            <artifactId>dubbo-service-redis-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
 
 
     </dependencies>

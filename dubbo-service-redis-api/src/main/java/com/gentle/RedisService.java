@@ -1,4 +1,4 @@
-package com.gentle.service.api;
+package com.gentle;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -55,7 +55,7 @@ public interface RedisService {
      void hashSet(String key, String field, String value, long time);
 
 
-    public String hashGet(String key, String field);
+     String hashGet(String key, String field);
 
     /**
      * 删除哈希中的属性

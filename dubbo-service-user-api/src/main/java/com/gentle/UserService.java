@@ -1,4 +1,4 @@
-package com.gentle.service;
+package com.gentle;
 
 /**
  * @author Gentle

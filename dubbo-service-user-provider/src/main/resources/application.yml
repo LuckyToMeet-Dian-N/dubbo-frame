@@ -29,7 +29,7 @@ services:
 dubbo:
   ## Base packages to scan Dubbo Component：@com.alibaba.dubbo.config.annotation.Service
   scan:
-    basePackages: com.gentle.service.api.impl
+    basePackages: com.gentle.api.impl
   ## ApplicationConfig Bean
   application:
     id: dubbo-service-user-provider

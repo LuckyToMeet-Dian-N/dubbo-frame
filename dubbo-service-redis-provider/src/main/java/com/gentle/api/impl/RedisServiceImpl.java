@@ -1,8 +1,8 @@
-package com.gentle.service.api.impl;
+package com.gentle.api.impl;
 
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.gentle.service.api.RedisService;
+import com.gentle.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
